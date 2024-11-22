@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose  from 'mongoose';
 import dotenv from "dotenv";
 import roleRoute from "./Routes/roles.js";
+import adminRoute from "./Routes/admin.js";
 
 const app = express();
 
@@ -9,6 +10,7 @@ dotenv.config();
 app.use(express.json());
 //routes
 app.use('/quiz/role', roleRoute);
+app.use('/quiz/admin', adminRoute);
 app.get('/', (req, res) => {
     res.json('Hello, World!');
 });
